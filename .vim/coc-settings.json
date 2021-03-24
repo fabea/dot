@@ -1,0 +1,15 @@
+{
+    "coc.preferences.formatOnType": true,
+    "coc.preferences.willSaveHandlerTimeout": 1000,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "python",
+    ],
+    "coc.source.around.firstMatch": false,
+    "pyright.enable": true,
+    "python.venvPath":["venv",".venv"],
+    "python.pythonPath": "python",
+    "python.linting.mypyEnabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "yapf",
+    "python.sortImports.path": "isort"
+}
