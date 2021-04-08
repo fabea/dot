@@ -3,10 +3,30 @@
     "coc.preferences.willSaveHandlerTimeout": 1000,
     "coc.preferences.formatOnSaveFiletypes": [
         "python",
+        "elixir",
+        "erlang",
+        "json",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
     ],
+    "languageserver": {
+        "erlang": {
+          "command": "erlang_ls",
+          "filetypes": ["erlang"]
+        }},
+    "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
+    "elixirLS.mixEnv": "dev",
+    "elixirLS.mixTarget": "test",
+    "json.enable":true,
+    "json.format.enable":true,
+    "eslint.autoFixOnSave": true,
+    "tsserver.formatOnType": true,
+    "prettier.disableSuccessMessage": true,
     "coc.source.around.firstMatch": false,
     "pyright.enable": true,
-    "python.venvPath":["venv",".venv"],
+    "python.venvPath":"venv",
     "python.pythonPath": "python",
     "python.linting.mypyEnabled": true,
     "python.linting.enabled": true,

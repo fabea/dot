@@ -73,7 +73,7 @@ output * bg ~/Pictures/nord.png fill
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec WAYLAND_DISPLAY= $term 
+    bindsym $mod+Return exec GLFW_IM_MODULE=ibus kitty 
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -262,7 +262,8 @@ bindsym $mod+Shift+F4 exec systemctl
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5% # Raise
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5% # Lower
 bindsym XF86AudioMute exec pactl set-sink-mute  $(pacmd list-sinks |awk '/* index:/{print $3}') toggle # Mutereboot
-bindsym $mod+w exec firefox-wayland
+bindsym $mod+w exec firefox
+bindsym $mod+z exec /opt/sublime_text/sublime_text 
 
 # run some apps
 exec qv2ray
