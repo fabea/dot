@@ -4,21 +4,15 @@
     "coc.preferences.formatOnSaveFiletypes": [
         "python",
         "elixir",
-        "erlang",
+        /* "erlang", */
         "json",
         "javascript",
         "javascriptreact",
         "typescript",
         "typescriptreact"
     ],
-    "languageserver": {
-        "erlang": {
-          "command": "erlang_ls",
-          "filetypes": ["erlang"]
-        }},
-    "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
-    "elixirLS.mixEnv": "dev",
-    "elixirLS.mixTarget": "test",
+    "erlang_ls.erlang_ls_path": "erlang_ls",
+    "erlang_ls.trace.server": "verbose",
     "json.enable":true,
     "json.format.enable":true,
     "eslint.autoFixOnSave": true,

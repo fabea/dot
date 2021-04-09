@@ -183,3 +183,5 @@ nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 " coc data dir
 let g:coc_data_home = '~/.vim/coc_data'
 
+" coc global
+let g:coc_global_extensions = ['coc-erlang_ls','coc-snippets','coc-emmet','coc-lists','coc-yank', 'coc-json']

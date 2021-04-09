@@ -26,13 +26,6 @@ Plug 'airblade/vim-gitgutter'
 " python related
 Plug 'Glench/Vim-Jinja2-Syntax',{'for':'html'}
 Plug 'jeetsukumaran/vim-pythonsense',{'for':'python'}
-" erlang
-Plug 'vim-erlang/vim-erlang-tags'
-Plug 'vim-erlang/vim-erlang-runtime'
-Plug 'vim-erlang/vim-erlang-compiler'
-Plug 'vim-erlang/vim-erlang-omnicomplete'
-" completion
-Plug 'lifepillar/vim-mucomplete'
 " ui
 Plug 'romainl/vim-cool'
 Plug 'Yggdroot/indentLine'
@@ -44,6 +37,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'sheerun/vim-polyglot' 
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
+Plug 'sbdchd/neoformat'
 " js
 Plug 'pangloss/vim-javascript',{'for':'javascript'}
 Plug 'maxmellon/vim-jsx-pretty',{'for':'javascript'}
@@ -56,8 +50,10 @@ Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'pbogut/fzf-mru.vim'
-" " nnn
+" nnn
 Plug 'mcchrish/nnn.vim'
+" lsp
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -135,9 +131,6 @@ nmap ga <Plug>(EasyAlign)
 map ; <Plug>(clever-f-repeat-forward)
 map , <Plug>(clever-f-repeat-back)
 
-" coc
-" source ~/.coc_config.vim
-
 " keybindgs
 " jk to replace esc
 inoremap jk <ESC>
@@ -166,23 +159,15 @@ let g:nnn#action = {
       \ '<c-x>': 'split',
       \ '<c-v>': 'vsplit' }
 
-" prevent lightline from disappearing each time source the main config
-call lightline#update()
+" coc
+source ~/.coc_config.vim
 
-" completion
-set completeopt-=preview
-set completeopt+=longest,menuone,noselect
-" let g:mucomplete#enable_auto_at_startup = 1
-if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-        \	if &omnifunc == "" |
-        \		setlocal omnifunc=syntaxcomplete#Complete |
-        \	endif
-endif
-
-" formatter
 " erlang format
-autocmd FileType erlang autocmd BufWritePre <buffer> 
-      \silent execute '!rebar3 fmt --write %' 
-      \| edit!
-      \| redraw!
+let g:neoformat_erlang_erlfmt = {
+  \ 'exe': 'rebar3',
+  \ 'args': ['fmt --write'],
+  \ 'stdin': 0,
+  \ 'replace': 1,
+  \ }
+let g:neoformat_enabled_erlang = ['erlfmt']
+autocmd BufWritePre rebar.config,*.[he]rl,*.app.src Neoformat erlfmt 
