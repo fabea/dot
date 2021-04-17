@@ -27,17 +27,19 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Glench/Vim-Jinja2-Syntax',{'for':'html'}
 Plug 'jeetsukumaran/vim-pythonsense',{'for':'python'}
 " ui
+Plug 'sainnhe/sonokai'
 Plug 'romainl/vim-cool'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
-Plug 'sainnhe/sonokai'
 Plug 'NLKNguyen/papercolor-theme'
 " basic editting
+Plug 'sbdchd/neoformat'
 Plug 'rhysd/clever-f.vim'
 Plug 'sheerun/vim-polyglot' 
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
-Plug 'sbdchd/neoformat'
+" wiki
+Plug 'vimwiki/vimwiki',{'for':'wiki'}
 " js
 Plug 'pangloss/vim-javascript',{'for':'javascript'}
 Plug 'maxmellon/vim-jsx-pretty',{'for':'javascript'}
@@ -48,8 +50,8 @@ Plug 'mattn/emmet-vim'
 Plug 'honza/vim-snippets'
 " searching
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'pbogut/fzf-mru.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " nnn
 Plug 'mcchrish/nnn.vim'
 " lsp
@@ -123,6 +125,9 @@ autocmd FileType javascript setlocal makeprg=node\ %
 " autocmd FileType javascript noremap  <F5> :Make<cr>
 autocmd FileType javascript noremap  <F5> :Dispatch npx nodemon %<cr>
 
+"" dispatch for erlang
+autocmd FileType erlang noremap  <F5> :Dispatch dialyzer %<cr>
+
 "" vim-align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -138,8 +143,8 @@ inoremap jk <ESC>
 let mapleader=" "
 " fzf
 nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <Leader>f :Files<CR>
-nnoremap <silent> <Leader>ff :Files ~/Code<CR>
+nnoremap <silent> <Leader>ff :Files<CR>
+nnoremap <silent> <Leader>fF :Files ~/Code<CR>
 nnoremap <silent> <Leader>fg :GFiles<CR>
 nnoremap <silent> <Leader>rg :Rg<CR>
 nnoremap <silent> <Leader>/ :BLines<CR>

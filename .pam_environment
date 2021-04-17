@@ -1,6 +1,7 @@
 MOZ_ENABLE_WAYLAND DEFAULT=1
-FZF_DEFAULT_COMMAND DEFAULT='rg --files'
 IM_MODULE DEFAULT=fcitx
 QT_IM_MODULE  DEFAULT=fcitx
 XMODIFIERS    DEFAULT=\@im=fcitx
 HEX_MIRROR DEFAULT='https://cdn.jsdelivr.net/hex'
+_JAVA_AWT_WM_NONREPARENTING DEFAULT=1
+FZF_DEFAULT_COMMAND DEFAULT='rg --files --no-ignore --hidden --follow --glob "!.git/*"'

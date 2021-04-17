@@ -7,7 +7,7 @@
 exec mako
 
 # font config
-font pango:Monospace 10
+font pango:Monospace 12
 
 ### Variables
 #
@@ -19,7 +19,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+# set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -263,7 +263,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5% # Lower
 bindsym XF86AudioMute exec pactl set-sink-mute  $(pacmd list-sinks |awk '/* index:/{print $3}') toggle # Mutereboot
 bindsym $mod+w exec firefox
-bindsym $mod+z exec /opt/sublime_text/sublime_text 
 
 # run some apps
 exec qv2ray

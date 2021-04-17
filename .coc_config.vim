@@ -173,7 +173,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Show mrus
-nnoremap <silent><nowait> <space>r :<C-u>CocList mru<cr>
+" nnoremap <silent><nowait> <space>r :<C-u>CocList mru<cr>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
@@ -184,4 +184,4 @@ nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 let g:coc_data_home = '~/.vim/coc_data'
 
 " coc global
-let g:coc_global_extensions = ['coc-erlang_ls','coc-snippets','coc-emmet','coc-lists','coc-yank', 'coc-json']
+let g:coc_global_extensions = ['coc-emoji','coc-pyright','coc-erlang_ls','coc-snippets','coc-emmet','coc-lists','coc-yank', 'coc-json']
