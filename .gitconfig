@@ -2,3 +2,6 @@
 	proxy = http://127.0.0.1:8889
 [https]
 	proxy = http://127.0.0.1:8889
+[user]
+	name = Alex Yan
+	email = fabea87@yandex.com

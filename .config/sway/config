@@ -263,8 +263,10 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5% # Lower
 bindsym XF86AudioMute exec pactl set-sink-mute  $(pacmd list-sinks |awk '/* index:/{print $3}') toggle # Mutereboot
 bindsym $mod+w exec firefox
+bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
+bindsym Shift+Print exec ~/.config/sway/screenshot
 
 # run some apps
-exec qv2ray
+exec --no-startup-id qv2ray
 exec fcitx5
 include /etc/sway/config.d/*
